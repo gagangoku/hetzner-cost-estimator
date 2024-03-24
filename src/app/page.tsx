@@ -2,9 +2,10 @@
 import { estimateCost } from "@/lib/cost";
 import { useEffect, useState } from "react";
 import SimpleLoader from "./components/SimpleLoader";
+import Head from "next/head";
 
 
-export default function Home() {
+const Home = () => {
     const [key, setKey] = useState('');
     const [price, setPrice] = useState('-');
     const [loading, setLoading] = useState(false);
@@ -37,31 +38,34 @@ export default function Home() {
     };
 
     return (
-        <main className="flex min-h-screen flex-col p-5">
-            <div className="text-2xl">Cost estimator for Hetzner cloud</div>
-
-            <div className="flex flex-row mt-4">
-                <div className="">API key</div>
-                <input className="ml-4 px-2 text-sm" type="text" value={key} onChange={(event) => setKey(event.target.value)}
-                    placeholder="  your Hetzner cloud api key"
-                    style={{ borderBottom: '1px solid #a0a0a0', borderRadius: 0, outline: 'none', width: 400, maxWidth: 800, color: '#505050' }} />
-            </div>
-            <button className="px-4 py-1 mt-4" style={{ width: 200, background: 'blue', color: 'white', borderRadius: 2 }} onClick={onClickFn}>
-                Get Estimate
-            </button>
-
-            <div className="mt-4 text-sm">
-                Your monthly bill estimate (without VAT): <b>{loading ? <SimpleLoader /> : price}</b>
-            </div>
-            <div className="flex flex-col mt-8">
-                <div className="mb-2 text-lg">FAQs</div>
-                <div className="text-sm" style={{ color: '#505050' }}>
-                    <div className="">&bull; This tool uses your API key to get the current running servers & volumes</div>
-                    <div className="">&bull; We only look at your current running servers, not the ones you have launched in the past</div>
+        <div>
+            <main className="flex min-h-screen flex-col p-5">
+                <div className="text-2xl">Cost estimator for Hetzner cloud</div>
+                <div className="flex flex-row mt-4">
+                    <div className="">API key</div>
+                    <input className="ml-4 px-2 text-sm" type="text" value={key} onChange={(event) => setKey(event.target.value)}
+                        placeholder="  your Hetzner cloud api key"
+                        style={{ borderBottom: '1px solid #a0a0a0', borderRadius: 0, outline: 'none', width: 400, maxWidth: 800, color: '#505050' }} />
                 </div>
-            </div>
-        </main>
+                <button className="px-4 py-1 mt-4" style={{ width: 200, background: 'blue', color: 'white', borderRadius: 2 }} onClick={onClickFn}>
+                    Get Estimate
+                </button>
+
+                <div className="mt-4 text-sm">
+                    Your monthly bill estimate (without VAT): <b>{loading ? <SimpleLoader /> : price}</b>
+                </div>
+                <div className="flex flex-col mt-8">
+                    <div className="mb-2 text-lg">FAQs</div>
+                    <div className="text-sm" style={{ color: '#505050' }}>
+                        <div className="">&bull; This tool uses your API key to get the current running servers & volumes</div>
+                        <div className="">&bull; We only look at your current running servers, not the ones you have launched in the past</div>
+                    </div>
+                </div>
+            </main>
+        </div>
     );
-}
+};
 
 const LOCALSTORAGE_KEY = 'hetzer_key';
+
+export default Home;
