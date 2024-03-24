@@ -8,6 +8,6 @@ Just enter your key and see the estimate.
 
 ## Roadmap
 - [x] Call Hetzner `/servers` api
-- []  Call `/volumes` api
-- []  Factor in when the server was created
-- []  Add deleted servers estimate (somehow)
+- [ ] Call `/volumes` api
+- [ ] Factor in when the server was created
+- [ ] Add deleted servers estimate (somehow)
