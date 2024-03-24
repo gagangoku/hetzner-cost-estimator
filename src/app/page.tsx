@@ -2,7 +2,6 @@
 import { estimateCost } from "@/lib/cost";
 import { useEffect, useState } from "react";
 import SimpleLoader from "./components/SimpleLoader";
-import Head from "next/head";
 
 
 const Home = () => {
