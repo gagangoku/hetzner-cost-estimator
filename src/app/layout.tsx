@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const fontFamily = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Hetzer cloud cost estimator",
     description: "A simple UI to see your cloud costs",
+    // icons: 'https://console.hetzner.cloud/favicon-32x32.png',
 };
 
 export default function RootLayout({
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={inter.className}>{children}</body>
+            <body className={fontFamily.className}>{children}</body>
         </html>
     );
 }

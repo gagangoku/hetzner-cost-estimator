@@ -40,6 +40,8 @@ const Home = () => {
 
     return (
         <div>
+            <link rel="icon" href="/icon.png" type="image/png" sizes="any" />
+
             <main className="flex min-h-screen flex-col p-5">
                 <div className="text-2xl">Cost estimator for Hetzner cloud</div>
                 <div className="flex flex-row mt-4">
@@ -48,8 +50,8 @@ const Home = () => {
                         placeholder="  your Hetzner cloud api key"
                         style={{ borderBottom: '1px solid #a0a0a0', borderRadius: 0, outline: 'none', width: 400, maxWidth: 800, color: '#505050' }} />
                 </div>
-                <button className="px-4 py-1 mt-4" style={{ width: 200, background: 'blue', color: 'white', borderRadius: 2 }} onClick={onClickFn}>
-                    Get Estimate
+                <button className="px-4 py-1 mt-4 text-sm" style={{ width: 200, background: 'blue', color: 'white', borderRadius: 5 }} onClick={onClickFn}>
+                    SHOW ESTIMATE
                 </button>
 
                 <div className="mt-4 text-sm">
