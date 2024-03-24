@@ -22,7 +22,6 @@ export default function Home() {
         window.localStorage[LOCALSTORAGE_KEY] = value;
     };
 
-    // mZNQSJmOgQBY0IWUTZ2SukQwtmBC9kK5TnpjKRGEBQLt9cd8IHqHq2TQJetRk7oX
     const onClickFn = async () => {
         if (!key) {
             window.alert('key is must');
