@@ -2,6 +2,8 @@
 import { estimateCost } from "@/lib/cost";
 import { useEffect, useState } from "react";
 import SimpleLoader from "./components/SimpleLoader";
+import githubIcon from '../../public/github-mark.svg';
+import Image from 'next/image';
 
 
 const Home = () => {
@@ -59,6 +61,13 @@ const Home = () => {
                         <div className="">&bull; This tool uses your API key to get the current running servers & volumes</div>
                         <div className="">&bull; We only look at your current running servers, not the ones you have launched in the past</div>
                     </div>
+                </div>
+
+                <div className="mt-12">
+                    <a className="text-xs flex flex-row items-center" href="https://github.com/gagangoku/hetzner-cost-estimator" target="_blank">
+                        <Image className="mr-2" alt='github' src={githubIcon} height={20} width={20} />
+                        See the source code
+                    </a>
                 </div>
             </main>
         </div>
